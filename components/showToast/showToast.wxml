@@ -1,0 +1,22 @@
+
+<template name="showToast">
+  <block wx:if="{{showToast.isShow? showToast.isShow: false}}">
+    <view class="toast-bg" wx:if="{{showToast.mask==false? false : true}}"></view>
+    <view class="toast-center">
+      <view class="toast" style="background: {{showToast.bg ? showToast.bg : 'rgba(0, 0, 0, .75)'}}">
+        <!-- loading -->
+        <view class="middle" wx:if="{{showToast.icon}}">
+          <image class="toast-icon" src="{{showToast.icon}}" mode="scaleToFill" wx:if="{{showToast.icon}}" />
+          <text wx:if="{{showToast.content}}" class="toast-content">{{showToast.content}}</text>
+        </view>
+        <!-- login -->
+        <text wx:if="{{showToast.title}}" class="toast-title">{{showToast.title}}</text>
+        <view wx:if="{{showToast.btnCancel && showToast.btnUserInfo}}">
+          <text class='toast-text'>请先登录~</text>
+          <button class='toast-btn' catchtap='click_cancel'>{{showToast.btnCancel}}</button>
+          <button class='toast-btn toast-btn2' open-type="getUserInfo" bindgetuserinfo="click_user_info">{{showToast.btnUserInfo}}</button>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>

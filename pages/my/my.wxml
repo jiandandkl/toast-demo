@@ -1,0 +1,8 @@
+<import src="../../components/showToast/showToast.wxml" />
+<template is="showToast" data="{{showToast: showToast}}" />
+<view class='container'>
+  <block wx:if='{{userInfo}}'>
+    <image class='img' src='{{userInfo.avatarUrl}}' />
+    <text>{{userInfo.nickName}}</text>
+  </block>
+</view>

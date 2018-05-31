@@ -1,0 +1,2 @@
+<import src="../../components/showToast/showToast.wxml" />
+<template is="showToast" data="{{showToast: showToast}}" />
